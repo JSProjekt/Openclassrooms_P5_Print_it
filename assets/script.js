@@ -59,7 +59,7 @@ function sliderdots() {
 		if (i == index) {
 			dot.classList.add("dot_selected");
 		}
-		
+
 	}
 }
 
