@@ -38,20 +38,15 @@ const lastImg = slides.length - 1;
 
 /** functions  **/
 
-function main() {
-	sliderdots();
-	slideleft();
-	slideRight();
-	slidesMovement();
-}
+sliderDots();
+slideLeft();
+slideRight();
+slidesMovement();
 
-/** script **/
-
-main();
 
 /** Dots slider **/
 
-function sliderdots() {
+function sliderDots() {
 	for (let i = 0; i < slides.length; i++) {
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
@@ -69,7 +64,7 @@ const dot = document.querySelectorAll(".dots .dot");
 
 /** Click left **/
 
-function slideleft() {
+function slideLeft() {
 	arrowleft.addEventListener("click", () => {
 		dot[index].classList.remove("dot_selected");
 		index--;
