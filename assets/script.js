@@ -36,35 +36,28 @@ const dots = document.querySelector(".dots");
 let index = 0;
 const lastImg = slides.length - 1;
 
-/** functions  **/
+/** Table for dots **/
 
-sliderDots();
-slideLeft();
-slideRight();
-slidesMovement();
-
+const dotTab = document.querySelectorAll(".dots .dot");
 
 /** Dots slider **/
 
-function sliderDots() {
+function createDots() {
 	for (let i = 0; i < slides.length; i++) {
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
 		dots.appendChild(dot);
-		if (i == index) {
+		if (i == 0) {
 			dot.classList.add("dot_selected");
 		}
 
 	}
 }
 
-/** Table for dots **/
-
-const dotTab = document.querySelectorAll(".dots .dot");
 
 /** Click left **/
 
-function slideLeft() {
+function init() {
 	arrowLeft.addEventListener("click", () => {
 		dotTab[index].classList.remove("dot_selected");
 		index--;
@@ -72,13 +65,9 @@ function slideLeft() {
 			index = lastImg;
 		}
 		dotTab[index].classList.add("dot_selected");
-		slidesMovement();
+		updateSlide();
 	});
-}
 
-/** Click Right **/
-
-function slideRight() {
 	arrowRight.addEventListener("click", () => {
 		dotTab[index].classList.remove("dot_selected");
 		index++;
@@ -86,13 +75,17 @@ function slideRight() {
 			index = 0;
 		}
 		dotTab[index].classList.add("dot_selected");
-		slidesMovement();
+		updateSlide();
 	});
+	createDots();
+	updateSlide();
 }
 
 /** Title and img animation **/
 
-function slidesMovement() {
+function updateSlide() {
 	sliderImg.src = "./assets/images/slideshow/" + slides[index].image;
 	sliderTag.innerHTML = slides[index].tagLine;
 }
+
+init()
