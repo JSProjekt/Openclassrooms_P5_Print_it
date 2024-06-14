@@ -60,18 +60,18 @@ function sliderDots() {
 
 /** Table for dots **/
 
-const dot = document.querySelectorAll(".dots .dot");
+const dotTab = document.querySelectorAll(".dots .dot");
 
 /** Click left **/
 
 function slideLeft() {
 	arrowleft.addEventListener("click", () => {
-		dot[index].classList.remove("dot_selected");
+		dotTab[index].classList.remove("dot_selected");
 		index--;
 		if (index < 0) {
 			index = lastImg;
 		}
-		dot[index].classList.add("dot_selected");
+		dotTab[index].classList.add("dot_selected");
 		slidesMovement();
 	});
 }
@@ -80,12 +80,12 @@ function slideLeft() {
 
 function slideRight() {
 	arrowright.addEventListener("click", () => {
-		dot[index].classList.remove("dot_selected");
+		dotTab[index].classList.remove("dot_selected");
 		index++;
 		if (index > lastImg) {
 			index = 0;
 		}
-		dot[index].classList.add("dot_selected");
+		dotTab[index].classList.add("dot_selected");
 		slidesMovement();
 	});
 }
