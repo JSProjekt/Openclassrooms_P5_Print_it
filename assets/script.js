@@ -19,8 +19,8 @@ const slides = [
 
 /** Variables **/
 
-const arrowright = document.querySelector(".arrow_right");
-const arrowleft = document.querySelector(".arrow_left");
+const arrowRight = document.querySelector(".arrow_right");
+const arrowLeft = document.querySelector(".arrow_left");
 
 /** Zone img **/
 
