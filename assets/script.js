@@ -65,7 +65,7 @@ const dotTab = document.querySelectorAll(".dots .dot");
 /** Click left **/
 
 function slideLeft() {
-	arrowleft.addEventListener("click", () => {
+	arrowLeft.addEventListener("click", () => {
 		dotTab[index].classList.remove("dot_selected");
 		index--;
 		if (index < 0) {
@@ -79,7 +79,7 @@ function slideLeft() {
 /** Click Right **/
 
 function slideRight() {
-	arrowright.addEventListener("click", () => {
+	arrowRight.addEventListener("click", () => {
 		dotTab[index].classList.remove("dot_selected");
 		index++;
 		if (index > lastImg) {
