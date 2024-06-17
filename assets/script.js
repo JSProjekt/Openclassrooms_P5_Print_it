@@ -36,9 +36,7 @@ const dots = document.querySelector(".dots");
 let index = 0;
 const lastImg = slides.length - 1;
 
-/** Table for dots **/
 
-const dotTab = document.querySelectorAll(".dots .dot");
 
 /** Dots slider **/
 
@@ -54,6 +52,11 @@ function createDots() {
 	}
 }
 
+createDots();
+
+/** Table for dots **/
+
+const dotTab = document.querySelectorAll(".dots .dot");
 
 /** Click left **/
 
@@ -77,9 +80,10 @@ function init() {
 		dotTab[index].classList.add("dot_selected");
 		updateSlide();
 	});
-	createDots();
-	updateSlide();
+
 }
+
+updateSlide();
 
 /** Title and img animation **/
 
