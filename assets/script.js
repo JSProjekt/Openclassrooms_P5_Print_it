@@ -83,7 +83,7 @@ function init() {
 
 }
 
-updateSlide();
+
 
 /** Title and img animation **/
 
@@ -92,4 +92,5 @@ function updateSlide() {
 	sliderTag.innerHTML = slides[index].tagLine;
 }
 
+updateSlide();
 init()
