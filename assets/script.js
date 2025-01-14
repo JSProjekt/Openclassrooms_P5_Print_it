@@ -27,7 +27,6 @@ const dots = document.querySelector(".dots");
 
 
 let index = 0;
-const lastImg = slides.length - 1;
 
 
 
@@ -56,27 +55,29 @@ const dotTab = document.querySelectorAll(".dots .dot");
 function init() {
 	arrowLeft.addEventListener("click", () => {
 		dotTab[index].classList.remove("dot_selected");
-		index--;
-		if (index < 0) {
-			index = lastImg;
-		}
+		index = (index - 1 + slides.length) % slides.length;
 		dotTab[index].classList.add("dot_selected");
 		updateSlide();
 	});
 
 	arrowRight.addEventListener("click", () => {
 		dotTab[index].classList.remove("dot_selected");
-		index++;
-		if (index > lastImg) {
-			index = 0;
-		}
+		index = (index + 1) % slides.length;
 		dotTab[index].classList.add("dot_selected");
 		updateSlide();
 	});
 
 }
 
-
+// Add click event for dots
+dotTab.forEach((dot, i) => {
+	dot.addEventListener("click", () => {
+		dotTab[index].classList.remove("dot_selected");
+		index = i;
+		dotTab[index].classList.add("dot_selected");
+		updateSlide();
+	});
+});
 
 /** Title and img animation **/
 
