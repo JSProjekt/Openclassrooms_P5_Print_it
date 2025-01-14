@@ -17,21 +17,14 @@ const slides = [
 	}
 ]
 
-/** Variables **/
+const BASE_PATH = "./assets/images/slideshow/";
 
 const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
-
-/** Zone img **/
-
 const sliderImg = document.querySelector(".banner-img");
 const sliderTag = document.querySelector("#banner p");
-
-/** Dots **/
-
 const dots = document.querySelector(".dots");
 
-/** Position initiale img **/
 
 let index = 0;
 const lastImg = slides.length - 1;
@@ -88,7 +81,7 @@ function init() {
 /** Title and img animation **/
 
 function updateSlide() {
-	sliderImg.src = "./assets/images/slideshow/" + slides[index].image;
+	sliderImg.src = BASE_PATH + slides[index].image;
 	sliderTag.innerHTML = slides[index].tagLine;
 }
 
